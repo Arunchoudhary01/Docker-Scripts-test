@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  testcon1:
+    image: "arunchoudhary01/nginx-con1"
+    ports:
+      - "90:80"
+    networks:
+      - testnetwork
+
+  testcon2:
+    image: "arunchoudhary01/my-static-web"
+    ports:
+      - "91:80"
+    networks:
+      - testnetwork
+
+  testcon3:
+    image: "arunchoudhary01/volume-con1"
+    ports:
+      - "92:80"
+    networks:
+      - testnetwork
+
+networks:
+  testnetwork:
+    external: true
+
